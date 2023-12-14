@@ -4,10 +4,9 @@ clear
 nums=$(seq 100 301 | tr -s '\n' '|')
 nums+=$(seq -s"|" 400 599)
 
-echo -e "\e[0;31mBy Mr-DarK\e[0m\n\n\e[02mFormato proxy: 10.10. - 10.10.10.\nSolicitudes 0 - 255 ips o.\e[0m\n"; sleep 1
+echo -e "\e[0;31mBy Mr-DarK\e[0m\n\n\e[02mFormato proxy: 10.10. - 10.10.10.\nSolicitudes 0 - 255 ips\e[0m\n"; sleep 1
 
 while :; do
-echo -e ""
 read -p "IP/Proxy: " IP
 read -p "Puerto: " PUERTO
 read -p "Domínio: " DOMINIO
