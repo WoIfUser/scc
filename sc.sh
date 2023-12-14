@@ -6,7 +6,7 @@ nums+=$(seq -s"|" 400 599)
 
 while :; do
 read -p "IP/Proxy: " IP
-read -p "PORT: " PUERTO
+read -p "IP/Proxy: " PUERTO
 read -p "Domínio: " DOMINIO
 
 dots=$(grep -F "." -o <<< $IP | wc -l)
