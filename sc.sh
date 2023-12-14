@@ -5,6 +5,7 @@ nums=$(seq 100 301 | tr -s '\n' '|')
 nums+=$(seq -s"|" 400 599)
 
 while :; do
+echo -e "\e[01;37mSFR SEARCH\e[0m"
 read -p "IP/Proxy: " IP
 read -p "Puerto: " PUERTO
 read -p "Dominio: " DOMINIO
