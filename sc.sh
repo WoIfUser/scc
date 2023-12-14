@@ -6,11 +6,11 @@ nums+=$(seq -s"|" 400 599)
 
 while :; do
 read -p "IP/Proxy: " IP
-read -p "Puerto: " PUERTO
+read -p "PORT: " PUERTO
 read -p "Domínio: " DOMINIO
 
 dots=$(grep -F "." -o <<< $IP | wc -l)
-> ips.txt; echo "By Mr-DarK" > a; > b
+> ips.txt; echo "By WolFUser" > a; > b
 case $dots in
   1) echo -e "\e[01;33mAmigo... 3 rangos de ip, va demorar un culo\e[0m\n"; sleep 1
      #  VA DEMORAR UN CULO
@@ -26,11 +26,11 @@ case $dots in
       echo -e "\n\e[01;33mCerca de 65536 ips fueron generados\nLas solicitaciones seran jodidas en subshell\e[0m\n\e[02m(Puede demorar)\e[0m\n"
        x=$(($(wc -l < ips.txt)/3))
 
-         $(for i in $(seq $x); do ip=$(sed -n "$i"p ips.txt); try=$(curl -m 3 -s -o /dev/null -w "%{http_code}" $DOMINIO -H "Upgrade: websocket" -x $ip:$PUERTO); eval "case $try in $nums\ ) echo \"$ip|$try\" >> OK.txt; echo \"\e[01;33m$ip\e[0m | \e[01;37mIP OK - STATUS $try\e[0m\" >> ips2.txt; echo \"By Mr-DarK\" >> a;; *):; esac"; done; echo a >> b) </dev/null >/dev/null 2>&1&
+         $(for i in $(seq $x); do ip=$(sed -n "$i"p ips.txt); try=$(curl -m 3 -s -o /dev/null -w "%{http_code}" $DOMINIO -H "Upgrade: websocket" -x $ip:$PUERTO); eval "case $try in $nums\ ) echo \"$ip|$try\" >> OK.txt; echo \"\e[01;33m$ip\e[0m | \e[01;37mIP OK - STATUS $try\e[0m\" >> ips2.txt; echo \"By WolFUser\" >> a;; *):; esac"; done; echo a >> b) </dev/null >/dev/null 2>&1&
 
-         $(for i in $(seq $(($x+1)) $(($x*2))); do ip=$(sed -n "$i"p ips.txt); try=$(curl -m 3 -s -o /dev/null -w "%{http_code}" $DOMINIO -H "Upgrade: websocket" -x $ip:$PUERTO); eval "case $try in $nums\ ) echo \"$ip|$try\" >> OK.txt; echo \"\e[01;33m$ip\e[0m | \e[01;37mIP OK - STATUS $try\e[0m\" >> ips2.txt; echo \"By Mr-DarK\" >> a;; *):; esac"; done; echo a >> b) </dev/null >/dev/null 2>&1&
+         $(for i in $(seq $(($x+1)) $(($x*2))); do ip=$(sed -n "$i"p ips.txt); try=$(curl -m 3 -s -o /dev/null -w "%{http_code}" $DOMINIO -H "Upgrade: websocket" -x $ip:$PUERTO); eval "case $try in $nums\ ) echo \"$ip|$try\" >> OK.txt; echo \"\e[01;33m$ip\e[0m | \e[01;37mIP OK - STATUS $try\e[0m\" >> ips2.txt; echo \"By WolFUser\" >> a;; *):; esac"; done; echo a >> b) </dev/null >/dev/null 2>&1&
 
-         $(for i in $(seq $(($x*2+1)) $(wc -l < ips.txt)); do ip=$(sed -n "$i"p ips.txt); try=$(curl -m 3 -s -o /dev/null -w "%{http_code}" $DOMINIO -H "Upgrade: websocket" -x $ip:$PUERTO); eval "case $try in $nums\ ) echo \"$ip|$try\" >> OK.txt; echo \"\e[01;33m$ip\e[0m | \e[01;37mIP OK - STATUS $try\e[0m\" >> ips2.txt; echo \"By Mr-DarK\" >> a;; *):; esac"; done; echo a >> b) </dev/null >/dev/null 2>&1&
+         $(for i in $(seq $(($x*2+1)) $(wc -l < ips.txt)); do ip=$(sed -n "$i"p ips.txt); try=$(curl -m 3 -s -o /dev/null -w "%{http_code}" $DOMINIO -H "Upgrade: websocket" -x $ip:$PUERTO); eval "case $try in $nums\ ) echo \"$ip|$try\" >> OK.txt; echo \"\e[01;33m$ip\e[0m | \e[01;37mIP OK - STATUS $try\e[0m\" >> ips2.txt; echo \"By WolFUser\" >> a;; *):; esac"; done; echo a >> b) </dev/null >/dev/null 2>&1&
       
       while :; do
        linhas=$(wc -l < a)
