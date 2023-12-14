@@ -6,8 +6,8 @@ nums+=$(seq -s"|" 400 599)
 
 while :; do
 read -p "IP/Proxy: " IP
-read -p "IP/Proxy: " PUERTO
-read -p "Domínio: " DOMINIO
+read -p "Puerto: " PUERTO
+read -p "Dominio: " DOMINIO
 
 dots=$(grep -F "." -o <<< $IP | wc -l)
 > ips.txt; echo "By WolFUser" > a; > b
