@@ -12,7 +12,7 @@ read -p "IP/Proxy: " IP
 read -p "Puerto: " PUERTO
 read -p "Domínio: " DOMINIO
 
-dots=$(fgrep "." -o <<< $IP | wc -l)
+dots=$(grep -F "." -o <<< $IP | wc -l)
 > ips.txt; echo "By Mr-DarK" > a; > b
 case $dots in
   1) echo -e "\e[01;33mAmigo... 3 rangos de ip, va demorar un culo\e[0m\n"; sleep 1
