@@ -5,11 +5,11 @@ nums=$(seq 100 301 | tr -s '\n' '|')
 nums+=$(seq -s"|" 400 599)
 
 while :; do
-echo -e "\e[01;37mIP/Proxy\e[0m"
+echo -e "\e[1;31mIP/Proxy\e[0m"
 read -p "" IP
-echo -e "\e[01;37mPUERTO\e[0m"
+echo -e "\e[1;31mPORT\e[0m"
 read -p "" PUERTO
-echo -e "\e[01;37mDOMINIO\e[0m"
+echo -e "\e[1;31mDOMAIN\e[0m"
 read -p "" DOMINIO
 
 dots=$(grep -F "." -o <<< $IP | wc -l)
